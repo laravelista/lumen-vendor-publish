@@ -16,7 +16,7 @@
   ],
   "autoload": {
     "psr-4": {
-      "BasicIt\\LumenVendorPublish\\": "src"
+      "BasicIT\\LumenVendorPublish\\": "src"
     }
   },
   "minimum-stability": "stable",
