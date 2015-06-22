@@ -1,0 +1,29 @@
+{
+  "name": "basicit/lumen-vendor-publish-command",
+  "description": "Vendor publish command for Lumen framework.",
+  "license": "MIT",
+  "keywords": [
+    "lumen",
+    "vendor",
+    "publish",
+    "command"
+  ],
+  "authors": [
+    {
+      "name": "Mario Basic",
+      "email": "mario.basic@outlook.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "BasicIt\\LumenVendorPublish\\": "src"
+    }
+  },
+  "minimum-stability": "stable",
+  "require": {
+    "illuminate/console": "^5.1",
+    "illuminate/filesystem": "^5.1",
+    "illuminate/support": "^5.1",
+    "league/flysystem": "^1.0"
+  }
+}
