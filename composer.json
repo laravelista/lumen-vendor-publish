@@ -1,5 +1,5 @@
 {
-  "name": "basicit/lumen-vendor-publish-command",
+  "name": "basicit/lumen-vendor-publish",
   "description": "Vendor publish command for Lumen framework.",
   "license": "MIT",
   "keywords": [
