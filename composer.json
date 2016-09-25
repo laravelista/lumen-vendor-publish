@@ -1,22 +1,23 @@
 {
-  "name": "basicit/lumen-vendor-publish",
-  "description": "Vendor publish command for Lumen framework.",
+  "name": "laravelista/lumen-vendor-publish",
+  "description": "vendor:publish for Lumen framework.",
   "license": "MIT",
   "keywords": [
     "lumen",
     "vendor",
     "publish",
-    "command"
+    "command",
+    "console"
   ],
   "authors": [
     {
-      "name": "Mario Basic",
+      "name": "Mario Bašić",
       "email": "mario.basic@outlook.com"
     }
   ],
   "autoload": {
     "psr-4": {
-      "BasicIT\\LumenVendorPublish\\": "src"
+      "Laravelista\\LumenVendorPublish\\": "src"
     }
   },
   "minimum-stability": "stable",
