@@ -41,6 +41,15 @@ class VendorPublishCommand extends Command
         $this->files = $files;
     }
     /**
+     * Compatiblity for Lumen 5.5.
+     *
+     * @return void
+     */
+    public function handle()
+    {
+        $this->fire();
+    }
+    /**
      * Execute the console command.
      *
      * @return void
