@@ -1,4 +1,6 @@
-<?php namespace Laravelista\LumenVendorPublish;
+<?php
+
+namespace Laravelista\LumenVendorPublish;
 
 use Illuminate\Console\Command;
 use Illuminate\Filesystem\Filesystem;
@@ -15,6 +17,7 @@ class VendorPublishCommand extends Command
      * @var \Illuminate\Filesystem\Filesystem
      */
     protected $files;
+
     /**
      * The console command signature.
      *
@@ -23,12 +26,14 @@ class VendorPublishCommand extends Command
     protected $signature = 'vendor:publish {--force : Overwrite any existing files.}
             {--provider= : The service provider that has assets you want to publish.}
             {--tag=* : One or many tags that have assets you want to publish.}';
+
     /**
      * The console command description.
      *
      * @var string
      */
     protected $description = 'Publish any publishable assets from vendor packages';
+
     /**
      * Create a new command instance.
      *
@@ -38,8 +43,10 @@ class VendorPublishCommand extends Command
     public function __construct(Filesystem $files)
     {
         parent::__construct();
+
         $this->files = $files;
     }
+
     /**
      * Compatiblity for Lumen 5.5.
      *
@@ -49,6 +56,7 @@ class VendorPublishCommand extends Command
     {
         $this->fire();
     }
+
     /**
      * Execute the console command.
      *
@@ -57,11 +65,14 @@ class VendorPublishCommand extends Command
     public function fire()
     {
         $tags = $this->option('tag');
+
         $tags = $tags ?: [null];
+
         foreach ($tags as $tag) {
             $this->publishTag($tag);
         }
     }
+
     /**
      * Publishes the assets for a tag.
      *
@@ -70,12 +81,12 @@ class VendorPublishCommand extends Command
      */
     private function publishTag($tag)
     {
-        $paths = ServiceProvider::pathsToPublish(
-            $this->option('provider'), $tag
-        );
+        $paths = ServiceProvider::pathsToPublish($this->option('provider'), $tag);
+
         if (empty($paths)) {
             return $this->comment("Nothing to publish for tag [{$tag}].");
         }
+
         foreach ($paths as $from => $to) {
             if ($this->files->isFile($from)) {
                 $this->publishFile($from, $to);
@@ -85,8 +96,10 @@ class VendorPublishCommand extends Command
                 $this->error("Can't locate path: <{$from}>");
             }
         }
+
         $this->info("Publishing complete for tag [{$tag}]!");
     }
+
     /**
      * Publish the file to the given path.
      *
@@ -99,10 +112,14 @@ class VendorPublishCommand extends Command
         if ($this->files->exists($to) && !$this->option('force')) {
             return;
         }
+
         $this->createParentDirectory(dirname($to));
+
         $this->files->copy($from, $to);
+
         $this->status($from, $to, 'File');
     }
+
     /**
      * Publish the directory to the given directory.
      *
@@ -116,13 +133,16 @@ class VendorPublishCommand extends Command
             'from' => new Flysystem(new LocalAdapter($from)),
             'to' => new Flysystem(new LocalAdapter($to)),
         ]);
+
         foreach ($manager->listContents('from://', true) as $file) {
             if ($file['type'] === 'file' && (!$manager->has('to://' . $file['path']) || $this->option('force'))) {
                 $manager->put('to://' . $file['path'], $manager->read('from://' . $file['path']));
             }
         }
+
         $this->status($from, $to, 'Directory');
     }
+
     /**
      * Create the directory to house the published files if needed.
      *
@@ -135,6 +155,7 @@ class VendorPublishCommand extends Command
             $this->files->makeDirectory($directory, 0755, true);
         }
     }
+
     /**
      * Write a status message to the console.
      *
@@ -146,8 +167,9 @@ class VendorPublishCommand extends Command
     protected function status($from, $to, $type)
     {
         $from = str_replace(base_path(), '', realpath($from));
+
         $to = str_replace(base_path(), '', realpath($to));
+
         $this->line('<info>Copied ' . $type . '</info> <comment>[' . $from . ']</comment> <info>To</info> <comment>[' . $to . ']</comment>');
     }
-
 }
