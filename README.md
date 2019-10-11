@@ -6,7 +6,9 @@ This package contains a single command borrowed from the Laravel framework that 
 
 ## Overview
 
-This is mostly a copy from [`illuminate/foundation`](https://github.com/laravel/framework/blob/6.x/src/Illuminate/Foundation/Console/VendorPublishCommand.php).
+This package contains a copy of the class from [`Illuminate/Foundation/Console/VendorPublishCommand`](https://github.com/laravel/framework/blob/6.x/src/Illuminate/Foundation/Console/VendorPublishCommand.php).
+
+**This repository now follows the Lumen framework versioning.** Use the appropriate version of this package for your Lumen application. _eg. Lumen ^5.5 -> LumenVendorPublish ^5.5. etc._
 
 ## Installation
 
