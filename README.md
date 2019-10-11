@@ -1,15 +1,17 @@
 # `vendor:publish` for Lumen framework
 
-[![Latest Stable Version](https://poser.pugx.org/laravelista/lumen-vendor-publish/v/stable)](https://packagist.org/packages/laravelista/lumen-vendor-publish) [![Total Downloads](https://poser.pugx.org/laravelista/lumen-vendor-publish/downloads)](https://packagist.org/packages/laravelista/lumen-vendor-publish) [![Latest Unstable Version](https://poser.pugx.org/laravelista/lumen-vendor-publish/v/unstable)](https://packagist.org/packages/laravelista/lumen-vendor-publish) [![License](https://poser.pugx.org/laravelista/lumen-vendor-publish/license)](https://packagist.org/packages/laravelista/lumen-vendor-publish)
+This package contains a single command borrowed from the Laravel framework that enables you to use `php artisan vendor:publish` in your Lumen application.
 
-This is mostly a copy from [`illuminate/foundation`](https://github.com/laravel/framework/blob/5.3/src/Illuminate/Foundation/Console/VendorPublishCommand.php).
+[![Become a Patron](https://img.shields.io/badge/Become%20a-Patron-f96854.svg?style=for-the-badge)](https://www.patreon.com/laravelista)
 
-This package contains a single command that enables you to publish a package config file to the config folder of your Lumen application.
+## Overview
+
+This is mostly a copy from [`illuminate/foundation`](https://github.com/laravel/framework/blob/5.1/src/Illuminate/Foundation/Console/VendorPublishCommand.php).
 
 ## Installation
 
 ```
-composer require laravelista/lumen-vendor-publish
+composer require laravelista/lumen-vendor-publish=^5.1
 ```
 
 ## Usage
@@ -21,3 +23,19 @@ protected $commands = [
     \Laravelista\LumenVendorPublish\VendorPublishCommand::class
 ];
 ```
+
+## Laravelista Sponsors & Backers
+
+I would like to extend my thanks to the following sponsors & backers for funding my open-source journey. If you are interested in becoming a sponsor or backer, please visit the Laravelista [Backers page](https://laravelista.hr/backers).
+
+## Contributing
+
+Thank you for considering contributing to LumenVendorPublish! The contribution guide can be found on the [Laravelista website](https://laravelista.hr/contributing).
+
+## Code of Conduct
+
+In order to ensure that the Laravelista community is welcoming to all, please review and abide by the [Code of Conduct](https://laravelista.hr/code-of-conduct).
+
+## License
+
+LumenVendorPublish is open-source software licensed under the [MIT license](https://opensource.org/licenses/MIT).
