@@ -11,7 +11,7 @@ This is mostly a copy from [`illuminate/foundation`](https://github.com/laravel/
 ## Installation
 
 ```
-composer require laravelista/lumen-vendor-publish=^5.1
+composer require laravelista/lumen-vendor-publish=^5.2
 ```
 
 ## Usage
