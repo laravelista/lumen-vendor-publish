@@ -22,9 +22,9 @@
   },
   "minimum-stability": "stable",
   "require": {
-    "illuminate/console": "^5.7",
-    "illuminate/filesystem": "^5.7",
-    "illuminate/support": "^5.7",
+    "illuminate/console": "^5.8",
+    "illuminate/filesystem": "^5.8",
+    "illuminate/support": "^5.8",
     "league/flysystem": "^1.0.8"
   }
 }
