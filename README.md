@@ -6,12 +6,12 @@ This package contains a single command borrowed from the Laravel framework that 
 
 ## Overview
 
-This is mostly a copy from [`illuminate/foundation`](https://github.com/laravel/framework/blob/5.4/src/Illuminate/Foundation/Console/VendorPublishCommand.php).
+This is mostly a copy from [`illuminate/foundation`](https://github.com/laravel/framework/blob/5.5/src/Illuminate/Foundation/Console/VendorPublishCommand.php).
 
 ## Installation
 
 ```
-composer require laravelista/lumen-vendor-publish=^5.4
+composer require laravelista/lumen-vendor-publish=^5.5
 ```
 
 ## Usage
