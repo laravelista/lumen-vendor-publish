@@ -18,7 +18,10 @@
   "autoload": {
     "psr-4": {
       "Laravelista\\LumenVendorPublish\\": "src"
-    }
+    },
+    "files": [
+      "src/helpers.php"
+    ]
   },
   "minimum-stability": "stable",
   "require": {
