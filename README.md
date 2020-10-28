@@ -13,7 +13,7 @@ This package contains a copy of the class from [`Illuminate/Foundation/Console/V
 ## Installation
 
 ```
-composer require laravelista/lumen-vendor-publish=^7.0
+composer require laravelista/lumen-vendor-publish=^8.0
 ```
 
 ## Usage
