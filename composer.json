@@ -22,9 +22,10 @@
   },
   "minimum-stability": "stable",
   "require": {
+    "php": ">=7.1",
     "illuminate/console": "^8.0",
     "illuminate/filesystem": "^8.0",
     "illuminate/support": "^8.0",
-    "league/flysystem": "^1.0.8"
+    "league/flysystem": "^1.0.8|^2.0"
   }
 }
